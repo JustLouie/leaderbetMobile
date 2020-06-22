@@ -1,5 +1,6 @@
-import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import React from 'react'
+import { StyleSheet, SafeAreaView } from 'react-native'
+import { Header } from 'react-native-elements'
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
@@ -17,6 +18,10 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%'
+  },
+  header: {
+    height: 50,
+    backgroundColor: '#202126'
   }
 })
 
@@ -24,6 +29,7 @@ const App = props => {
   return (
     <Provider store={store}>
       <SafeAreaView style={styles.container}>
+        <Header containerStyle={styles.header} />
         <Register {...props} />
       </SafeAreaView>
     </Provider>
