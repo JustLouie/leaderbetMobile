@@ -1,19 +1,35 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import { Provider } from 'react-redux'
+import { applyMiddleware, createStore } from 'redux'
+import {composeWithDevTools} from 'redux-devtools-extension'
+import Register from './pages/Register'
+import thunk from 'redux-thunk'
+import MainReducer from './reducers'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+export const store = createStore(MainReducer, composeWithDevTools(
+  applyMiddleware(
+    thunk
+  )
+))
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    width: '100%',
+    height: '100%'
+  }
+})
+
+const App = props => {
+  return (
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <Register {...props} />
+      </SafeAreaView>
+    </Provider>
+  )
+}
+
+
+
+export default App
