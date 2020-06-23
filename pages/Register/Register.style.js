@@ -39,10 +39,10 @@ export default {
         padding: 10,
         width: '100%',
         margin: 0,
-        fontSize: 11
+        fontSize: 11,
     },
     labelWithInput: {
-        
+        paddingRight: 30
     },
     inputWrapper: {
         display: 'flex',
@@ -55,5 +55,35 @@ export default {
     customLabel: {
         paddingLeft: 10,
         fontWeight: 'bold'
+    },
+    smallSelect: {
+        width: '30%',
+        marginRight: 10
+    },
+    bigSelect: {
+    },
+    select: {
+        marginLeft: 10,
+        marginBottom: 25,
+        color: '#fff',
+        fontSize: 11,
+    },
+    labelWithCheckbox: {
+        display: 'flex' 
+    },
+    checkbox: {
+        paddingLeft: 0,
+        backgroundColor: 'transparent',
+        borderColor: 'transparent'
+    },
+    checkboxText: {
+        color: '#fff',
+        fontSize: 11
+    },
+    registerButton: {
+        backgroundColor: '#ebc340'
+    },
+    registerTitle: {
+        color: '#482800'
     }
 }
